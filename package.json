@@ -1,0 +1,40 @@
+{
+  "name": "screeps-scripts",
+  "version": "1.0.0",
+  "description": "A custom AI for the game Screeps",
+  "main": "main.js",
+  "bin": {
+    "screeps-scripts": "temp.js"
+  },
+  "scripts": {
+    "all-ci": "npm run lint && npm run cov",
+    "cov": "npm run test-cov",
+    "cov-watch": "NODE_ENV=test nodemon --exec npm run test-cov",
+    "deploy-unsafe": "./bin/deploy.js",
+    "deploy": "npm run all-ci && npm run deploy-unsafe",
+    "lint": "eslint ./src",
+    "test": "NODE_ENV=test mocha",
+    "test-watch": "NODE_ENV=test nodemon --exec npm run test",
+    "test-cov": "NODE_ENV=test nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fritogotlayed/screeps-scripts.git"
+  },
+  "author": "Frito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fritogotlayed/screeps-scripts/issues"
+  },
+  "homepage": "https://github.com/fritogotlayed/screeps-scripts#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.2",
+    "nodemon": "^1.18.11",
+    "nyc": "^13.3.0",
+    "readline-sync": "^1.4.9",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0"
+  }
+}
